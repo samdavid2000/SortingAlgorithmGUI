@@ -2,12 +2,20 @@ from tkinter import*
 class Bars:
 
     def __init__(self, canvas, data):
+        """[Constructor of Bars Class]
+
+        Arguments:
+            canvas {[Canvas]} -- [Where the bars will be drawn]
+            data {[List]} -- [List that will be represented on the bar graph]
+            canvas_dimensions {[float,float]} -- [Dimensions of the canvas]
+        """
         self.canvas = canvas
         self.data = data
         self.canvas_dimensions = (self.canvas.winfo_reqheight(), self.canvas.winfo_reqwidth())
 
 
     def drawData(self, colors):
+        """Draws the list in bar chart form on the specified canvas"""
         self.canvas.delete("all")
         xWidth = self.canvas_dimensions[1] * 2 / (len(self.data) + 1)
         offcanvas, space = 20, 5
